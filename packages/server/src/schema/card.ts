@@ -1,11 +1,13 @@
 import { text, integer } from "drizzle-orm/sqlite-core";
 import { sqliteTable } from "drizzle-orm/sqlite-core";
+import { createId } from '@paralleldrive/cuid2';
 
 export const cards = sqliteTable("cards", {
+    id: text("id").primaryKey().$defaultFn(createId),
     image: text("image"),
     name: text("name"),
     kana_name: text("kana_name"),
-    card_no: text("card_no").primaryKey(),
+    card_no: text("card_no").unique(),
     product_name: text("product_name"),
     neo_standard: text("neo_standard"),
     expansion_no: text("expansion_no"),

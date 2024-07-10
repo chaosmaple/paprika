@@ -1,8 +1,9 @@
 CREATE TABLE `cards` (
+	`id` text PRIMARY KEY NOT NULL,
 	`image` text,
 	`name` text,
 	`kana_name` text,
-	`card_no` text PRIMARY KEY NOT NULL,
+	`card_no` text,
 	`product_name` text,
 	`neo_standard` text,
 	`expansion_no` text,
@@ -20,3 +21,5 @@ CREATE TABLE `cards` (
 	`flavor` text,
 	`illustrator` text
 );
+--> statement-breakpoint
+CREATE UNIQUE INDEX `cards_card_no_unique` ON `cards` (`card_no`);

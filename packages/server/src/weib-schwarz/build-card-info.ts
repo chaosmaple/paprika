@@ -112,12 +112,17 @@ export async function buildCardInfo(cardno: string) {
             case "power":
                 card[key] = getNumber($value.text());
                 break;
+            case "product_name":
+            case "expansion_no":
             case "card_no":
+            case "neo_standard":
+            case "rarity":
             case "text":
             case "flavor":
             case "illustrator":
                 const value = $value.text();
                 card[key] = value;
+                break;
         }
     });
 

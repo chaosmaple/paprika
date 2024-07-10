@@ -1,12 +1,19 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "04bdf2d2-6478-471c-908e-a18ff5c47a93",
+  "id": "b8fb9082-28e5-4961-a926-6ea8ebe4a56b",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "cards": {
       "name": "cards",
       "columns": {
+        "id": {
+          "name": "id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": false
+        },
         "image": {
           "name": "image",
           "type": "text",
@@ -31,8 +38,8 @@
         "card_no": {
           "name": "card_no",
           "type": "text",
-          "primaryKey": true,
-          "notNull": true,
+          "primaryKey": false,
+          "notNull": false,
           "autoincrement": false
         },
         "product_name": {
@@ -148,7 +155,15 @@
           "autoincrement": false
         }
       },
-      "indexes": {},
+      "indexes": {
+        "cards_card_no_unique": {
+          "name": "cards_card_no_unique",
+          "columns": [
+            "card_no"
+          ],
+          "isUnique": true
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}

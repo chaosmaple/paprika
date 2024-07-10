@@ -1,0 +1,19 @@
+{
+  "name": "@paprika/client",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "bunx --bun astro dev",
+    "start": "bunx --bun astro dev",
+    "build": "bunx --bun astro check && bunx --bun astro build",
+    "preview": "bunx --bun astro preview",
+    "astro": "bunx --bun astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.8.0",
+    "@paprika/server": "workspace:*",
+    "astro": "^4.11.5",
+    "astro-bun-adapter": "^1.0.2",
+    "typescript": "^5.5.3"
+  }
+}

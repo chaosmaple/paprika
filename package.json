@@ -1,26 +1,14 @@
 {
   "name": "paprika",
-  "version": "0.1.0",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts",
-    "generate": "drizzle-kit generate",
-    "migrate": "drizzle-kit migrate"
-  },
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "elysia": "latest"
+  "type": "module",
+  "private": "true",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "bun-types": "latest"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@sinclair/typebox": "^0.32.34",
-    "better-sqlite3": "^11.1.2",
-    "drizzle-kit": "^0.22.8",
-    "drizzle-orm": "^0.31.2",
-    "drizzle-typebox": "^0.1.1"
-  },
-  "module": "src/index.js"
+  }
 }
